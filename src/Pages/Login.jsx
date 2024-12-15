@@ -3,6 +3,7 @@ import AuthContext from "../Context/AuthContext/AuthContext";
 import toast from "react-hot-toast";
 import Lottie from "lottie-react";
 import loginLottie from "../assets/Lottie/Login.json"
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const {logInUser}=useContext(AuthContext)
@@ -51,6 +52,8 @@ const Login = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+                    <div className="divider divider-info"></div>
+                    <p className="mx-4 my-4">Don&apos;t have an Account??? <span><Link to="/register">Register Now</Link></span></p>
                 </div>
             </div>
         </div>

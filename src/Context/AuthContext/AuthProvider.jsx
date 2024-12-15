@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AuthContext from "./AuthContext";
 import PropTypes from "prop-types";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import auth from "../../Firebase/firebase.config";
 
 const AuthProvider = ({ children }) => {
@@ -31,6 +31,10 @@ const AuthProvider = ({ children }) => {
 
     } , [])
 
+    const logOut = () =>{
+        signOut(auth);
+    }
+
 
     const authInfo = {
         user,
@@ -38,6 +42,7 @@ const AuthProvider = ({ children }) => {
         loading,
         createUser,
         logInUser ,
+        logOut,
     }
 
     return (

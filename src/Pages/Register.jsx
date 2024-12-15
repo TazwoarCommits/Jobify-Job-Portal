@@ -69,7 +69,7 @@ const Register = () => {
                         </div>
                     </form>
                     <div className="divider divider-info"></div>
-                    <p>Already have an Account <span><Link to="/login">Log in</Link></span></p>
+                    <p className="mx-4 my-4">Already have an Account??? <span><Link to="/login">Log in</Link></span></p>
                 </div>
             </div>
         </div>
