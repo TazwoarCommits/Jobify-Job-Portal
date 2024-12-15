@@ -14,13 +14,14 @@ const AuthProvider = ({ children }) => {
     }
 
     const logInUser = (email , password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth , email , password) ;
     } 
 
     useEffect( () => {
        const unsubscribe = onAuthStateChanged(auth , currentUser => {
             setUser(currentUser) ;
-            console.log("current User", currentUser);
+            // console.log("current User", currentUser);
             setLoading(false) ;
         }) ; 
     
@@ -48,6 +49,6 @@ const AuthProvider = ({ children }) => {
 
 
 AuthProvider.propTypes = {
-    children: PropTypes.func
+    children: PropTypes.array
 }
 export default AuthProvider;
