@@ -4,6 +4,7 @@ import registerLottie from "../assets/Lottie/Register.json"
 import { useContext } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import { Link } from "react-router-dom";
+import GoogleLogin from "../Shared Components/GoogleLogin";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
@@ -69,6 +70,9 @@ const Register = () => {
                         </div>
                     </form>
                     <div className="divider divider-info"></div>
+                    <div>
+                        <GoogleLogin></GoogleLogin>
+                    </div>
                     <p className="mx-4 my-4">Already have an Account??? <span><Link to="/login">Log in</Link></span></p>
                 </div>
             </div>

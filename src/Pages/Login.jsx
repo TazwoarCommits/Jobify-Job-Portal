@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import Lottie from "lottie-react";
 import loginLottie from "../assets/Lottie/Login.json"
 import { Link, useNavigate } from "react-router-dom";
+import GoogleLogin from "../Shared Components/GoogleLogin";
 
 const Login = () => {
     const {logInUser}=useContext(AuthContext) ;
@@ -55,6 +56,9 @@ const Login = () => {
                         </div>
                     </form>
                     <div className="divider divider-info"></div>
+                    <div>
+                        <GoogleLogin></GoogleLogin>
+                    </div>
                     <p className="mx-4 my-4">Don&apos;t have an Account??? <span><Link to="/register">Register Now</Link></span></p>
                 </div>
             </div>
