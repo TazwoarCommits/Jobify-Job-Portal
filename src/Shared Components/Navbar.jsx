@@ -1,18 +1,22 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../Context/AuthContext/AuthContext";
+import toast from "react-hot-toast";
+import logo from "../assets/favicon.png"
 
 const Navbar = () => {
     const {user, logOut} = useContext(AuthContext) ;
 
     const handleLogOut = () => {
-           logOut();
+           logOut()
+           .then(() => toast.success("Logged Out Successful"))
+        //    .catch(err => toast.error(err.message))
     }
 
     const links = <>
-      <li><Link>Home</Link></li>
-      <li><Link>Jobs</Link></li>
-      <li><Link to="/register">Register</Link></li>
+      <li><NavLink>Home</NavLink></li>
+      <li><NavLink to="#">Jobs</NavLink></li>
+      <li><NavLink to="/register">Register</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -38,7 +42,7 @@ const Navbar = () => {
                        {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl"><img className="w-12" src={logo} /> JoNavLink</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

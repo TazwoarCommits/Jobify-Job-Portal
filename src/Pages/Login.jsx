@@ -3,10 +3,11 @@ import AuthContext from "../Context/AuthContext/AuthContext";
 import toast from "react-hot-toast";
 import Lottie from "lottie-react";
 import loginLottie from "../assets/Lottie/Login.json"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-    const {logInUser}=useContext(AuthContext)
+    const {logInUser}=useContext(AuthContext) ;
+    const navigate = useNavigate() ;
     const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.target);
@@ -16,7 +17,8 @@ const Login = () => {
         logInUser(email , password)
         .then(res => {
             // console.log(res.user)
-            toast.success(`Successfully Logged in with ${res.user.email}`)
+            toast.success(`Successfully Logged in with ${res.user.email}`) ;
+            navigate("/")
         })
         .catch(err => toast.error(err.message))
 
