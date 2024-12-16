@@ -42,7 +42,7 @@ const Navbar = () => {
                        {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl"><img className="w-12" src={logo} /> JoNavLink</a>
+                <a className="btn btn-ghost text-xl"><img className="w-12" src={logo} /> Jobify</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
