@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../Context/AuthContext/AuthContext";
+import toast from "react-hot-toast";
 
 const GoogleLogin = () => {
     
@@ -11,7 +12,9 @@ const GoogleLogin = () => {
 
     const handleGoogleLogin = () => {
         const provider = new GoogleAuthProvider ;
-        googleLogin(provider) ;
+        googleLogin(provider)
+        .then(res => toast.success(`Successfully Logged in With ${res.user.email}`))
+        .catch(err => toast.error(`${err.message}`))
         navigate("/") ;
     }
 

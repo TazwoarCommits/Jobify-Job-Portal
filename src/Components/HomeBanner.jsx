@@ -15,7 +15,7 @@ const HomeBanner = () => {
                     <motion.img
                         src={banner2}
                         animate={{ x: [80, 140, 80] }}
-                        transition={{ repeat: Infinity, duration: 10 }}
+                        transition={{ repeat: Infinity, delay : 5 ,duration: 10 }}
                         className="max-w-sm w-64 rounded-t-3xl rounded-r-3xl border-l-8 border-b-8 border-b-blue-800 border-l-blue-800  shadow-2xl" />
                 </div>
                 <div className="flex-1">
